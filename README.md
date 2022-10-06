@@ -6,7 +6,11 @@ This is a collection of tweaks and changes for the v3 of the board and i made a 
 
 ## tutorial
 
-This tutorial shows how to upload the firmware to the Atmega4809 using an arduino nano (Atmega328P) programmer. if you have any problems feel free to contact me
+This tutorial shows how to upload the firmware to the Atmega4809 using an arduino nano (Atmega328P) programmer. if you have any problems feel free to contact me!
+
+to upload the firmware to the board we need tu use a updi programmer. the easiest solution is to use an arduino nano. before you can upload the firmware you need to prepare the nano with these few steps:
+
+### Preparing the arduino nano
  
 1. Download/Clone the repo [here](https://github.com/ElTangas/jtag2updi) and rename the folder "source" to "jtag2updi" (otherwise the Arduino IDE won't open it)
 
@@ -20,15 +24,17 @@ Processor: Atmega328p (somtetimes Atmega328p(Old Bootloader) may be needed)
 Port: (port of your nano)
 ``` 
 
-4. Add the MegaCoreX hardware package to the Ardunio IDE (found [here](https://github.com/MCUdude/MegaCoreX#how-to-install))
+### Uploading the firmware with the programmer
 
-5. Install the Adafruit_GFX, Adafruit_SSD1306 and Debounce2 libraries with the Library Manager (`Sketch > include library > manage libraries`)
+1. Add the MegaCoreX hardware package to the Ardunio IDE (found [here](https://github.com/MCUdude/MegaCoreX#how-to-install))
 
-6. Download and open the ino in this repo found [here](https://github.com/DrB0rk/Bork-Reflow-Plate/blob/main/Board%20Versions/70mm%20by%2050mm%20Ver3.0%20ATmega4809/Software/SW1.0_HW3.0_70by50mm/SW1.0_HW3.0_70by50mm.ino)
+2. Install the Adafruit_GFX, Adafruit_SSD1306 and Debounce2 libraries with the Library Manager (`Sketch > include library > manage libraries`)
 
-7. Connect ds on the arduino nano to the updi pin on the board through a 4.7k ohm resistor, and connect GND and 5v from the arduino to the board
+3. Download and open the ino in this repo found [here](https://github.com/DrB0rk/Bork-Reflow-Plate/blob/main/Board%20Versions/70mm%20by%2050mm%20Ver3.0%20ATmega4809/Software/SW1.0_HW3.0_70by50mm/SW1.0_HW3.0_70by50mm.ino)
 
-8. Select the options below
+4. Connect ds on the arduino nano to the updi pin on the board through a 4.7k ohm resistor, and connect GND and 5v from the arduino to the board
+
+5. Select the options below
 
 ```
 Board: Atmega4809
@@ -43,7 +49,7 @@ port: (select the com port of your nano)
 Programmer: Jtag2updi
 ```
 
-11. upload the sketch using your programmer (`sketch > upload using programmer`)
+6. upload the sketch using your programmer (`sketch > upload using programmer`)
 
 ## Versions
 
