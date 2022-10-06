@@ -44,7 +44,7 @@ EEPROM: EEPROM retained
 Pinout: 48 pin standard
 Reset pin: reset
 Bootloader: No bootloader
-port: (select the com port of your nano)
+port: (select the com port of your programmer)
 
 Programmer: Jtag2updi
 ```
