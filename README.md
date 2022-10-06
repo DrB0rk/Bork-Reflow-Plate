@@ -1,18 +1,45 @@
 # **Solder Reflow Plate**
 
-###### By AfterEarth Ltd
+###### By AfterEarth Ltd and edit by DrB0rk
 
-## As Seen On GreatScott! 
+## tutorial
 
-This project has recently featured on a DIY or BUY GreatScott! video.
+1. Download/Clone the repo [here](https://github.com/ElTangas/jtag2updi) and rename the folder "source" to "jtag2updi" (otherwise the Arduino IDE won't open it)
 
-Check it out here - [The Best way to reflow solder? Hot Plate to the rescue! DIY or Buy](https://www.youtube.com/watch?v=QarizoUnRfk)
+2. Open `jtag2updi/jtag2updi.ino` in your Arduino IDE
 
-## UPDATE!!!
+3. Configure the flasher options for your Arduino Nano and flash it
+```
+Board: Arduino nano
+Processor: Atmega328p (somtetimes Atmega328p(Old Bootloader) may be needed)
 
-Join the [DISCORD!](https://discord.gg/YzhG6FcCRA)
+Port: (port of your nano)
+``` 
 
-Checkout the new Ver 3.0 design. Very similar to Ver 2.4 but now comes with ATmega4809 as its availability is much better than the 328p at the moment. Code is still in development but the board designs are available in the Board Versions Folder.
+4. Add the MegaCoreX hardware package to the Ardunio IDE (found [here](https://github.com/MCUdude/MegaCoreX#how-to-install))
+
+5. Install the Adafruit_GFX, Adafruit_SSD1306 and Debounce2 libraries with the Library Manager (`Sketch > include library > manage libraries`)
+
+6. Download and open the ino in this repo found [here](https://github.com/DrB0rk/Bork-Reflow-Plate/blob/main/Board%20Versions/70mm%20by%2050mm%20Ver3.0%20ATmega4809/Software/SW1.0_HW3.0_70by50mm/SW1.0_HW3.0_70by50mm.ino)
+
+7. Connect ds on the arduino nano to the updi pin on the board through a 4.7k ohm resistor, and connect GND and 5v from the arduino to the board
+
+8. Select the options below
+
+```
+Board: Atmega4809
+Clock: Internal 16 MHz
+BOD: BOD2.6V
+EEPROM: EEPROM retained
+Pinout: 48 pin standard
+Reset pin: reset
+Bootloader: No bootloader
+port: (select the com port of your nano)
+
+Programmer: Jtag2updi
+```
+
+11. upload the sketch using your programmer (`sketch > upload using programmer`)
 
 ## Versions
 
@@ -48,12 +75,6 @@ Hence the Solder Reflow Plate was born, a PCB-based, MOSFET controlled heater, p
 
 And so, this nerd bestows upon the world his project, fully open-source and hackable.
 Here's hoping that it may be used to develop skills, build custom circuit boards, and make quality designs possible to all!
-
-## Purchase
-
-- Register your email address at [www.solderreflowplate.co.uk](https://www.solderreflowplate.co.uk) to know when it is available to buy!
-- There is a worldwide shortage of ATmega328p Microcontrollers. I'm currently working on a small redesign for a more readily available chip.
-- Purchase will be available soon!
 
 ## License
 
