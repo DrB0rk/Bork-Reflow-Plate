@@ -1,28 +1,7 @@
  /* Solder Reflow Plate Sketch
  *  H/W - Ver 3.0
- *  S/W - Ver 1.0
- *  by Chris Halsall     */
+ *  S/W - Ver 1.0 */
 
-/* To prepare
- * 1) Install MiniCore in additional boards; (copy into File->Preferences->Additional Boards Manager URLs)
- *     https://mcudude.github.io/MiniCore/package_MCUdude_MiniCore_index.json
- * 2) Then add MiniCore by searching and installing (Tools->Board->Board Manager)
- * 3) Install Adafruit_GFX and Adafruit_SSD1306 libraries (Tools->Manage Libraries)
- */
-
-/* To program
- *  1) Select the following settings under (Tools)
- *      Board->Minicore->Atmega328 
- *      Clock->Internal 8MHz
- *      BOD->BOD 2.7V
- *      EEPROM->EEPROM retained
- *      Compiler LTO->LTO Disabled
- *      Variant->328P / 328PA
- *      Bootloader->No bootloader
- *  2) Set programmer of choice, e.g.'Arduino as ISP (MiniCore)', 'USB ASP', etc, and set correct port.
- *  3) Burn bootloader (to set fuses correctly)
- *  4) Compile and upload
- */
 
 #include <SPI.h>
 #include <Adafruit_GFX.h>
@@ -31,7 +10,7 @@
 #include <Bounce2.h>
 
 //Version Definitions
-static const PROGMEM float hw = 2.4;
+static const PROGMEM float hw = 3.0;
 static const PROGMEM float sw = 1.0;
 
 //Screen Definitions
